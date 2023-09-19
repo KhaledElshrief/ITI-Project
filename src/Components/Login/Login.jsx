@@ -4,7 +4,7 @@ import joi from "joi";
 import { useNavigate } from "react-router-dom";
 import stsyels from "./login.module.scss";
 
-export default function Login() {
+export default function Login({ saveUSerData }) {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -30,7 +30,9 @@ export default function Login() {
         user
       );
       if (data.message === "success") {
+        localStorage.setItem("token", data.token);
         goToHome();
+        saveUSerData();
       } else {
         setErrorMsg(data.message);
       }
