@@ -36,8 +36,8 @@ export default function Navbar({ userData, logout }) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="Sneakers">
-                    SNEAKERS
+                  <Link className="nav-link" to="Hotdeals">
+                    Hot Deals
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -46,8 +46,8 @@ export default function Navbar({ userData, logout }) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="Contact">
-                    CONTACT
+                  <Link className="nav-link" to="About">
+                    About
                   </Link>
                 </li>
               </ul>

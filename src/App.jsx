@@ -5,11 +5,13 @@ import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import Bags from "./Components/Bags/Bags";
-import Sneakers from "./Components/Sneakers/Sneakers";
+import HotDeals from "./Components/Hotdeals/Hotdeals";
 import Belt from "./Components/Belt/Belt";
-import Contact from "./Components/Contact/Contact";
+import About from "./Components/About/About";
+import { Profiler } from "react";
 
 function App() {
+  
   let routes = createBrowserRouter([
     {
       path: "",
@@ -18,9 +20,9 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "Bags", element: <Bags /> },
-        { path: "Sneakers", element: <Sneakers /> },
+        { path: "HotDeals", element: <HotDeals /> },
         { path: "Belt", element: <Belt /> },
-        { path: "Contact", element: <Contact /> },
+        { path: "About", element: <About /> },
         { path: "register", element: <Register /> },
         {
           path: "login",
@@ -32,7 +34,9 @@ function App() {
   ]);
   return (
     <div className="App">
+      <Profiler id="my_app">
       <RouterProvider router={routes} />
+      </Profiler>
     </div>
   );
 }

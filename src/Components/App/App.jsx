@@ -10,9 +10,9 @@ import Home from "./../Home/Home";
 import Register from "./../Register/Register";
 import Login from "./../Login/Login";
 import Bags from "../Bags/Bags";
-import Sneakers from "../Sneakers/Sneakers";
+import Hotdeals from "../Hotdeals/Hotdeals";
 import Belt from "../Belt/Belt";
-import Contact from "../Contact/Contact";
+import About from "../About/About";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
@@ -60,10 +60,10 @@ function App() {
           ),
         },
         {
-          path: "Sneakers",
+          path: "Hotdeals",
           element: (
             <ProtectedRoute userData={userData}>
-              <Sneakers />
+              <Hotdeals />
             </ProtectedRoute>
           ),
         },
@@ -76,10 +76,10 @@ function App() {
           ),
         },
         {
-          path: "Contact",
+          path: "About",
           element: (
             <ProtectedRoute userData={userData}>
-              <Contact />
+              <About />
             </ProtectedRoute>
           ),
         },

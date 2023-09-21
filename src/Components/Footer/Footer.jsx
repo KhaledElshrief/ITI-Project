@@ -25,7 +25,7 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <h4 className="my-2">Contact Us</h4>
+              <h4 className="my-2">About Us</h4>
               <p className=" text-muted">
                 E-comm,4589 <br />
                 marmora road <br />

@@ -26,7 +26,7 @@ export default function Home() {
           <div>
             <ul className="list-unstyled ">
               <li className="my-2">Comporate Shoes</li>
-              <li className="my-2">Sneakers</li>
+              <li className="my-2">Hotdeals</li>
               <li className="my-2">Sandals</li>
               <li className="my-2">Sport Shoe</li>
               <li className="my-2">Trainers</li>
@@ -35,7 +35,7 @@ export default function Home() {
           <div>
             <ul className="list-unstyled text-dark">
               <li className="my-2">Comporate Shoes</li>
-              <li className="my-2">Sneakers</li>
+              <li className="my-2">Hotdeals</li>
               <li className="my-2">Sandals</li>
               <li className="my-2">Sport Shoe</li>
               <li className="my-2">Trainers</li>
@@ -48,7 +48,7 @@ export default function Home() {
               <li className="my-2">Sunglasses</li>
               <li className="my-2">Belts</li>
               <li className="my-2">Handbags</li>
-              <li className="my-2">Sneakers</li>
+              <li className="my-2">Hotdeals</li>
             </ul>
           </div>
           <div>
@@ -58,13 +58,13 @@ export default function Home() {
               <li className="my-2">Sunglasses</li>
               <li className="my-2">Belts</li>
               <li className="my-2">Handbags</li>
-              <li className="my-2">Sneakers</li>
+              <li className="my-2">Hotdeals</li>
             </ul>
           </div>
           <div>
             <ul className="list-unstyled text-dark">
               <li className="my-2 ">Comporate Shoes</li>
-              <li className="my-2">Sneakers</li>
+              <li className="my-2">Hotdeals</li>
               <li className="my-2">Sandals</li>
               <li className="my-2">Sport Shoe</li>
               <li className="my-2">Trainers</li>
