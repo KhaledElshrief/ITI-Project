@@ -53,7 +53,7 @@ function App() {
           ),
         },
         {
-          path: "product/:id",
+          path: "productDetails/:id",
           element: (
             <ProductDetails userData={userData}>
               <Home />
