@@ -8,6 +8,7 @@ import Bags from "./Components/Bags/Bags";
 import HotDeals from "./Components/Hotdeals/Hotdeals";
 import Belt from "./Components/Belt/Belt";
 import About from "./Components/About/About";
+import ProductDetail from "./Components/ProductDetail/ProductDetails";
 import { Profiler } from "react";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         { path: "Belt", element: <Belt /> },
         { path: "About", element: <About /> },
         { path: "register", element: <Register /> },
+        { path: "ProductDetail", element: <ProductDetail /> },
         {
           path: "login",
           element: <Login />,
