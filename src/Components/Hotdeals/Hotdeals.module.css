@@ -55,6 +55,7 @@
     color: gold;
 }
 .name {
+    text-decoration: none;
     display: -webkit-box;
     -webkit-line-clamp: 1; 
     -webkit-box-orient: vertical;
