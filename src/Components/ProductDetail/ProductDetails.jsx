@@ -27,7 +27,7 @@ export default function ProductDetails() {
     });
 });
 
-const [related, setRelated] = useState()
+const [related, setRelated] = useState([])
 
 function get_related(){
   axios.get(`http://localhost:2000/Products`)
