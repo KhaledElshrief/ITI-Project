@@ -18,6 +18,7 @@ import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
 import Profile from "./../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import ProductDetails from "../ProductDetail/ProductDetails";
 
 function App() {
   const [userData, setuserData] = useState(null);
@@ -49,6 +50,14 @@ function App() {
             <ProtectedRoute userData={userData}>
               <Home />
             </ProtectedRoute>
+          ),
+        },
+        {
+          path: "product/:id",
+          element: (
+            <ProductDetails userData={userData}>
+              <Home />
+            </ProductDetails>
           ),
         },
         {
@@ -100,7 +109,7 @@ function App() {
     },
   ]);
   return (
-    <div ClassName="App">
+    <div className="App">
       <RouterProvider router={routes} />
     </div>
   );
