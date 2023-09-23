@@ -1,7 +1,10 @@
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styles from './Hotdeals.module.css';
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
 
 const Hotdeals = () => {
   const location = useLocation();
@@ -18,6 +21,11 @@ const Hotdeals = () => {
       })
       .catch((e) => console.log(e));
   };
+  const dispatch = useDispatch();
+
+  const addProduct = (product) => {
+    dispatch(addCart(product))
+  }
 
   useEffect(() => {
     getProducts();
@@ -52,8 +60,8 @@ const Hotdeals = () => {
                   src={product.imageURL}
                   alt={product.name}
                 />
-                <div className="card-body text-start">
-                  <Link to={`/ProductDetails/${product.id}`} className={styles.name}><h5 className={`card-title ${styles.name}`} >{product.name}</h5></Link>
+                <div className="card-body">
+                  <h5 className={`card-title ${styles.name}`} >{product.name}</h5>
                   <h3 className="card-title">{product.brand}</h3>
                   <h3 className={`card-title ${styles.realprice}`}>{product.price}$</h3>
                   <h3 className={`card-title text-decoration-line-through ${styles.price}`}>
@@ -65,7 +73,7 @@ const Hotdeals = () => {
                   <a
                     href="#"
                     className={`btn btn-outline-success text-secondary me-5 ${styles.card_icon}`}
-                    title="Add To Card"
+                    title="Add To Card" onClick={() => addProduct(product)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

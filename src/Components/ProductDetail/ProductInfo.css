@@ -84,8 +84,11 @@
 .review-form .round-black-btn {
 	text-transform: uppercase;
 	cursor: pointer;
+<<<<<<< HEAD
 }
 .related-product-col {
 	justify-content: center;
   	display: flex;
+=======
+>>>>>>> 5cc5f45 ("Cart update")
 }

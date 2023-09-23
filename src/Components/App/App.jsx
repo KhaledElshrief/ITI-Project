@@ -19,6 +19,9 @@ import { useEffect } from "react";
 import Profile from "./../Profile/Profile";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import ProductDetails from "../ProductDetail/ProductDetails";
+import Cart from '../Cart/Cart';
+import Checkout from '../Cart/Checkout';
+
 
 function App() {
   const [userData, setuserData] = useState(null);
@@ -38,6 +41,7 @@ function App() {
     saveUSerData(null);
     return <Navigate to="login" />;
   };
+  
   let routes = createBrowserRouter([
     {
       path: "",
@@ -89,6 +93,21 @@ function App() {
           element: (
             <ProtectedRoute userData={userData}>
               <About />
+            </ProtectedRoute>
+          ),
+        },{
+          path: "Cart",
+          element: (
+            <ProtectedRoute userData={userData}>
+              <Cart />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "Checkout",
+          element: (
+            <ProtectedRoute userData={userData}>
+              <Checkout />
             </ProtectedRoute>
           ),
         },
