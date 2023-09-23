@@ -182,7 +182,7 @@ window.addEventListener('resize', slideImage);
           const cartItems = lsCartItems ? JSON.parse(lsCartItems) : [];
           cartItems.push(data.id);
           localStorage.setItem('cartItems', JSON.stringify(cartItems))
-          setAddedToCart(false);
+          setAddedToCart(true);
         }}>
           Add To Cart <i className = "fas fa-shopping-cart"></i>
         </button>
