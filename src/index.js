@@ -6,11 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./index.scss";
-<<<<<<< HEAD
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
-=======
 import { Provider } from 'react-redux';
 import store from './Components/redux/store';
 
@@ -23,6 +18,5 @@ root.render(
         </Provider>
     </React.StrictMode>
     );
->>>>>>> 5cc5f45 ("Cart update")
 
 reportWebVitals();
