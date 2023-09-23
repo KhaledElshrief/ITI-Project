@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Profile({ userData }) {
+  let navigate=useNavigate()
+function deleteme(){
+  localStorage.removeItem('token')
+  navigate('/register')
+  
+}
+
+
   return (
     <>
       <div className="w-50  mt-3 ">
@@ -11,7 +20,9 @@ export default function Profile({ userData }) {
         </h4>
         <h4 className="my-2">Email: {userData?.email}</h4>
         <h4>Age: {userData?.age}</h4>
+        <button className="btn btn-danger" onClick={deleteme}>delete me</button>
       </div>
     </>
   );
 }
+

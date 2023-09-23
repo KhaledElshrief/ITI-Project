@@ -10,11 +10,8 @@ import Belt from "./Components/Belt/Belt";
 import About from "./Components/About/About";
 import ProductDetail from "./Components/ProductDetail/ProductDetails";
 import { Profiler } from "react";
-<<<<<<< HEAD
-=======
 import Cart from '../Cart/Cart';
 import Checkout from '../Cart/Checkout';
->>>>>>> 5cc5f45 ("Cart update")
 
 function App() {
   
@@ -29,11 +26,8 @@ function App() {
         { path: "HotDeals", element: <HotDeals /> },
         { path: "Belt", element: <Belt /> },
         { path: "About", element: <About /> },
-<<<<<<< HEAD
-=======
         { path: "Cart", element: <Cart /> },
         { path: "Checkout", element: <Checkout /> },
->>>>>>> 5cc5f45 ("Cart update")
         { path: "register", element: <Register /> },
         { path: "ProductDetail", element: <ProductDetail /> },
         {

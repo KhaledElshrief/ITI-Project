@@ -9,9 +9,7 @@ import Notfound from "./../Notfound/Notfound";
 import Home from "./../Home/Home";
 import Register from "./../Register/Register";
 import Login from "./../Login/Login";
-import Bags from "../Bags/Bags";
 import Hotdeals from "../Hotdeals/Hotdeals";
-import Belt from "../Belt/Belt";
 import About from "../About/About";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
@@ -21,6 +19,8 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import ProductDetails from "../ProductDetail/ProductDetails";
 import Cart from '../Cart/Cart';
 import Checkout from '../Cart/Checkout';
+import Admin from '../Admin/Admin';
+import ProDetails from '../ProDetails/ProDetails';
 
 
 function App() {
@@ -64,11 +64,20 @@ function App() {
             </ProductDetails>
           ),
         },
+
         {
-          path: "Bags",
+          path: "ProDetails/:id",
           element: (
             <ProtectedRoute userData={userData}>
-              <Bags />
+              <ProDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "Admin",
+          element: (
+            <ProtectedRoute userData={userData}>
+              <Admin />
             </ProtectedRoute>
           ),
         },
@@ -77,14 +86,6 @@ function App() {
           element: (
             <ProtectedRoute userData={userData}>
               <Hotdeals />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "Belt",
-          element: (
-            <ProtectedRoute userData={userData}>
-              <Belt />
             </ProtectedRoute>
           ),
         },
