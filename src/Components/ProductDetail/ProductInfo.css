@@ -85,3 +85,7 @@
 	text-transform: uppercase;
 	cursor: pointer;
 }
+.related-product-col {
+	justify-content: center;
+  	display: flex;
+}

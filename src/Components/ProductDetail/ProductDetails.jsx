@@ -229,7 +229,7 @@ window.addEventListener('resize', slideImage);
        <div className="container row">
        {related.map((product) => (
         
-        <div key={product.id} className="col-md-4 mt-4">
+        <div key={product.id} className="col-md-4 mt-4 related-product-col">
             <div className={`card shadow-lg p-3 mb-5 bg-white rounded ${styles2.main_card}`}>
               <div className={styles2.product_img_container}>
                 <span className={styles2.hot}>HOT</span>
