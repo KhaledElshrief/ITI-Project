@@ -30,6 +30,7 @@ export default function ProductDetails() {
 });
 
 const [related, setRelated] = useState([])
+const [addedToCart, setAddedToCart] = useState(false);
 
 function get_related(){
   axios.get(`http://localhost:2000/Products`)
@@ -59,7 +60,7 @@ useEffect(() => {
       const productData = res.data;
       const lsCartItems = localStorage.getItem('cartItems');
       const cartItems = lsCartItems ? JSON.parse(lsCartItems) : [];
-      productData.addedToCart = cartItems.includes(res.data.id);
+      setAddedToCart(cartItems.includes(res.data.id));
       setData(productData);
     })
     .catch((e) => console.log(e));
@@ -176,23 +177,22 @@ window.addEventListener('resize', slideImage);
       <div className = {styles.purchase_info}>
         <IncDec className={styles.IncDe}/>  
         <div className={styles.mainBtns}> 
-        <button style={{ display: data.addedToCart ? 'none' : 'block' }} type = "button" className ={`${styles.btn} btn `} onClick={()=> {
+        <button style={{ display: addedToCart ? 'none' : 'block' }} type = "button" className ={`${styles.btn} btn `} onClick={()=> {
           const lsCartItems = localStorage.getItem('cartItems');
           const cartItems = lsCartItems ? JSON.parse(lsCartItems) : [];
           cartItems.push(data.id);
           localStorage.setItem('cartItems', JSON.stringify(cartItems))
-          data.addedToCart = !data.addedToCart;
-        }} >
+          setAddedToCart(true);
+        }}>
           Add To Cart <i className = "fas fa-shopping-cart"></i>
         </button>
 
-        <button style={{ display: data.addedToCart ? 'block' : 'none' }} type = "button" className ={`${styles.btn} btn `} onClick={()=> {
+        <button style={{ display: addedToCart ? 'block' : 'none' }} type = "button" className ={`${styles.btn} btn `} onClick={()=> {
           const lsCartItems = localStorage.getItem('cartItems');
           let cartItems = lsCartItems ? JSON.parse(lsCartItems) : [];
           cartItems = cartItems.filter(i => i !== data.id);
           localStorage.setItem('cartItems', JSON.stringify(cartItems))
-          data.addedToCart = true;
-          console.log(data, cartItems);
+          setAddedToCart(false);
         }}>
           Remove From Cart <i className = "fas fa-shopping-cart"></i>
         </button>

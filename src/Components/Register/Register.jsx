@@ -48,7 +48,7 @@ export default function Register() {
       password: joi
         .string()
         .required()
-        .pattern(new RegExp(/^[a-z][0-9]{3}$/)),
+        .pattern(new RegExp(/^[a z 0-9]{8,15}$/)),
     });
     return schema.validate(user, { abortEarly: false });
   };
