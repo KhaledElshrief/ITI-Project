@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import stsyels from "./Navbar.module.scss";
 import openInfo from "../fun";
+import { useSelector } from 'react-redux';
 
 export default function Navbar({ userData, logout }) {
+  const state = useSelector(state => state.handleCart)
   return (
     <>
       <nav className={`navbar navbar-expand-lg   ${stsyels.bgNavbar}`}>
@@ -59,8 +61,8 @@ export default function Navbar({ userData, logout }) {
               {userData ? (
                 <>
                   <div className="social-media d-flex align-items-center me-3">
-                    <Link className="nav-link">
-                      <i class="fa-solid fa-cart-shopping mx-3"></i>
+                    <Link className="nav-link" to="/Cart">
+                      <i class="fa-solid fa-cart-shopping mx-3"></i>Cart ({state.length})
                     </Link>
                     <Link className="nav-link" to=" Profile">
                       <i class="fa-regular fa-user mx-1"></i>My Profile

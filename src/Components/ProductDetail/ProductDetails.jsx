@@ -7,6 +7,9 @@ import { blue } from "@mui/material/colors";
 import ProductInfo from "./ProductInfo";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
+
 const { useState, useEffect } = React
 
 export default function ProductDetails() {
@@ -38,6 +41,11 @@ function get_related(){
     })
     .catch((e)=> console.log(e))
 }
+const dispatch = useDispatch();
+
+  const addProduct = (product) => {
+    dispatch(addCart(product))
+  }
 
 useEffect(() => {
   getDetails();
@@ -110,7 +118,7 @@ window.addEventListener('resize', slideImage);
 
     <div  className = {styles.product_content}>
       <h2 className = {styles.product_title}>{ data.name }</h2>
-      <div style={{display: 'flex', gap: '10%'}}  className = {`${styles.product_rating } product-rating `} >
+       <div style={{display: 'flex', gap: '10%'}}  className = {`${styles.product_rating } product-rating `} >
         <div>
         <i className = "fas fa-star"></i>  
         <i className = "fas fa-star"></i>
@@ -174,7 +182,7 @@ window.addEventListener('resize', slideImage);
           const cartItems = lsCartItems ? JSON.parse(lsCartItems) : [];
           cartItems.push(data.id);
           localStorage.setItem('cartItems', JSON.stringify(cartItems))
-          setAddedToCart(true);
+          setAddedToCart(false);
         }}>
           Add To Cart <i className = "fas fa-shopping-cart"></i>
         </button>
@@ -229,7 +237,7 @@ window.addEventListener('resize', slideImage);
        <div className="container row">
        {related.map((product) => (
         
-        <div key={product.id} className="col-md-4 mt-4 related-product-col">
+          <div key={product.id} className="col-md-4  mt-4">
             <div className={`card shadow-lg p-3 mb-5 bg-white rounded ${styles2.main_card}`}>
               <div className={styles2.product_img_container}>
                 <span className={styles2.hot}>HOT</span>
@@ -250,7 +258,7 @@ window.addEventListener('resize', slideImage);
                   <a
                     href="#"
                     className={`btn btn-outline-success text-secondary me-5 ${styles2.card_icon}`}
-                    title="Add To Card"
+                    title="Add To Card" onClick={() => addProduct(product)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -266,7 +274,7 @@ window.addEventListener('resize', slideImage);
                   <a
                     href="#"
                     className={`btn btn-outline-danger text-danger ${styles2.love_icon}`}
-                    title="Add To Favorite"
+                    title="Add To Favorite" 
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
