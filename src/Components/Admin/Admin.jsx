@@ -82,8 +82,8 @@ setShow(!show)      }
                                     <h6>{elm.price}$</h6>
                                 </div>
                                 <div className='d-flex justify-content-between "'>
-                                    <button className="btn btn-danger w-50 me-1" onClick={() => deletePrd(elm.id)}>delete</button>
-                                    <Link to={`/products/${elm.id}`} className="btn btn-warning w-50 " >see more</Link>
+                                    <button className="btn btn-danger w-50 me-1" onClick={() => deletePrd(elm.id)}>Delete</button>
+                                    <Link to={`/ProDetails/${elm.id}`} className="btn btn-warning w-50 " >Edit</Link>
                                 </div>
                             </div>
                         </div>

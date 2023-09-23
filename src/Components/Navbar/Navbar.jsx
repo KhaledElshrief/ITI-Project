@@ -38,6 +38,11 @@ export default function Navbar({ userData, logout }) {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="Admin">
+                    Admin Panel
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="About">
                     About
                   </Link>

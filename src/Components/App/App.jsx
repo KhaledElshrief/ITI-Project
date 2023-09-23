@@ -21,6 +21,7 @@ import Cart from '../Cart/Cart';
 import Checkout from '../Cart/Checkout';
 import Admin from '../Admin/Admin';
 import ProDetails from '../ProDetails/ProDetails';
+import ShallowHome from '../ShallowHome/index.jsx'
 
 
 function App() {
@@ -62,6 +63,13 @@ function App() {
             <ProductDetails userData={userData}>
               <Home />
             </ProductDetails>
+          ),
+        },
+
+        {
+          path: "ITI-Project",
+          element: (
+            <ShallowHome />
           ),
         },
 

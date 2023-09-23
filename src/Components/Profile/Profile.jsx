@@ -20,7 +20,6 @@ function deleteme(){
         </h4>
         <h4 className="my-2">Email: {userData?.email}</h4>
         <h4>Age: {userData?.age}</h4>
-        <button className="btn btn-danger" onClick={deleteme}>delete me</button>
       </div>
     </>
   );
